@@ -71,8 +71,8 @@
 10. Once installation is completed don't forget to change the root and 42username account's password by running `passwd <username>`.
 
 ### Retrieve Signature of your Machine’s Virtual Disk (cf. [`subject`](Born2beRoot.pdf))
-* On MacOS or Linux open Terminal then run `cd ~/VirtualBox VMs/Born2beRoot && sha1sum Born2beRoot.vdi`.
-* On Windows press `Windows + R`, type `cmd` then run `cd C:\Users\<username>\VirtualBox VMs\Born2beRoot & certUtil -hashfile Born2beRoot.vdi sha1`.
+* On macOS or GNU/Linux open Terminal then run `cd ~/VirtualBox VMs/Born2beRoot && sha1sum Born2beRoot.vdi`.
+* On Windows press `Windows + R` and type `cmd` to open a command prompt then run `cd C:\Users\<username>\VirtualBox VMs\Born2beRoot & certUtil -hashfile Born2beRoot.vdi sha1`.
 
 ## Useful Commands
 
