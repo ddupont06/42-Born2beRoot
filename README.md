@@ -32,11 +32,11 @@
 6. Language: English.
 7. Location: Unisted States.
 8. Keyboard: French.
-9. Hostname: your42login42.
+9. Hostname: your42username42.
 10. Skip the domain name.
 11. Define the root password.
 12. Skip the full name.
-13. Username: your42login.
+13. Username: your42username.
 14. Define username password.
 15. Select whatever time zone.
 
@@ -81,6 +81,9 @@
 ```shell
 # Run an interactive shell as root:
 su
+
+# Run a command as the superuser (by default) or another user
+sudo <command>
 
 # List information about block devices:
 lsblk
