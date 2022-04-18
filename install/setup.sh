@@ -1,6 +1,6 @@
 #!/bin/bash
 # Define the USER variable as your 42 username.
-read -p "Enter your 42 account username: " USER
+read -p "Enter your 42 username: " USER
 
 # Check if the current user is root, if it is not, exit.
 if [ "$(whoami)" == "root" ] ; then
@@ -15,24 +15,23 @@ apt update
 # The sudo package configures basic rules for allowing unprivileged users to run commands as root or another user/group in the shell.
 apt -y install sudo
 # UFW is a frontend for managing firewall rules.
-sudo apt -y install ufw
+apt -y install ufw
 # libpam-pwquality package provides some plug-in strength-checking for passwords.
-sudo apt -y install libpam-pwquality
-# AppArmor proactively protects the operating system and applications from external or internal threats # by enforcing a specific
+apt -y install libpam-pwquality
+# AppArmor proactively protects the operating system and applications from external or internal threats by enforcing a specific
 # rule set on a per application basis.
-sudo apt -y install apparmor
+apt -y install apparmor
 #Cron allows the user to manage scheduled tasks from the command line.
-sudo apt -y install cron
-sudo apt -y install net-tools
+apt -y install cron
 
 # Manage files permissions.
-sudo chmod 644 sshd_config
-sudo chmod 644 login.defs
-sudo chmod 644 common-password
-sudo chmod 644 sudo_config
-sudo chmod 644 interfaces
-sudo chmod 600 root
-sudo chmod 644 monitoring.sh
+chmod 644 sshd_config
+chmod 644 login.defs
+chmod 644 common-password
+chmod 644 sudo_config
+chmod 644 interfaces
+chmod 600 root
+chmod 644 monitoring.sh
 
 # SSH config file (SSH root login disabled, SSH port changed to 4242).
 cp sshd_config /etc/ssh/sshd_config
@@ -52,13 +51,13 @@ cp root /var/spool/cron/crontabs/root
 cp monitoring.sh /usr/local/bin/monitoring.sh 
 
 # Enable UFW and allow  SSH connections on port 4242.
-sudo ufw enable
-sudo ufw allow 4242
+ufw enable
+ufw allow 4242
 
 # Add a user42 group and add $USER to the user42 and sudo groups.
-sudo addgroup user42
-sudo adduser $USER user42
-sudo adduser $USER sudo
+addgroup user42
+adduser $USER user42
+adduser $USER sudo
 
 # Set sudo log directory permissions.
 chmod 755 /var/log/sudo
@@ -71,7 +70,7 @@ chage -M 30 -m 2 -W 7 root
 echo "Everything was successfully installed. Rebooting now."
 
 # Clean after installation.
-rm -rf sshd_config login.defs common-password sudo_config interfaces crontab monitoring.sh setup.sh
+rm -rf sshd_config login.defs common-password sudo_config interfaces root monitoring.sh setup.sh
 
 # Reboot the virtual machine
-sudo reboot
+reboot
