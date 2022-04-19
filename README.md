@@ -82,8 +82,12 @@
 # Run an interactive shell as root:
 su
 
-# Run a command as the superuser (by default) or another user
+# Run a command as the superuser (by default) or another user:
 sudo <command>
+
+# Check Debian version:
+hostnamectl
+cat /etc/os-release
 
 # List information about block devices:
 lsblk
