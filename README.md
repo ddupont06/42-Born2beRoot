@@ -105,7 +105,7 @@ route -n
 systemctl enable ssh
 
 # Start SSH service:
-systemctl status ssh
+systemctl start ssh
 
 # Show SSH serivce status:
 systemctl status ssh
