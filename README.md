@@ -8,7 +8,7 @@
 
 ## Result
 
-/![](result.png)
+![](result.png)
 
 ## Install
 
